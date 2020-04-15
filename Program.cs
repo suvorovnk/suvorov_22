@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lab6
+namespace Lab8
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Lab6
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Start());
+            Application.Run(new Menu());
         }
     }
 }
