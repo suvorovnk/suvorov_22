@@ -1,0 +1,178 @@
+CREATE TABLE Book(book_id serial Primary key,author_id int,name text NOT NULL,year int);
+CREATE TABLE Author(author_id serial Primary key,asurname text NOT NULL,aname text NOT NULL,alastname text,birthday date);
+CREATE TABLE Publish(pub_id serial Primary key,pub_name text NOT NULL,pub_city text);
+CREATE TABLE Buyers(buyer_id serial Primary key,buyer_name text NOT NULL,buyer_city text);
+CREATE TABLE Purchase(pur_id serial Primary key,buyer_id int,pur_date date NOT NULL);
+CREATE TABLE Purch_book(pur_id serial,pub_id serial,book_id serial,
+						count int DEFAULT 1,price money CHECK(price>0.0::float::numeric::money),
+						Primary key(pur_id,pub_id,book_id));
+Alter TABLE Book add
+Foreign key (author_id)
+References author(author_id);
+Alter TABLE Purch_book add
+Foreign key (pur_id)
+References Purchase(pur_id);
+Alter TABLE Purch_book add
+Foreign key (book_id)
+References Book(book_id);
+Alter TABLE Purch_book add
+Foreign key (pub_id)
+References Publish (pub_id);
+Alter TABLE Purchase add
+Foreign key (buyer_id)
+References Buyers (buyer_id);
+INSERT INTO author (asurname,aname,alastname,birthday)
+VALUES ('Толстой','Лев','Николаевич','1828-08-28');
+INSERT INTO author (asurname,aname,alastname,birthday)
+VALUES ('Грибоедов','Александр','Сергеевич','1795-01-15');
+INSERT INTO author (asurname,aname,alastname,birthday)
+VALUES ('Пушкин','Александр','Сергеевич','1799-05-26');
+INSERT INTO author (asurname,aname,alastname,birthday)
+VALUES ('Лермонтов','Михаил','Юрьевич','1814-10-15');
+INSERT INTO author (asurname,aname,alastname,birthday)
+VALUES ('Ахматова','Анна','Андреевна','1889-06-23');
+INSERT INTO author (asurname,aname,birthday)
+VALUES ('Найт','Фил','1938-02-24');
+INSERT INTO author (asurname,aname,birthday)
+VALUES ('Родари','Джанни','1920-10-23');
+INSERT INTO author (asurname,aname,alastname,birthday)
+VALUES ('Толстой','Алексей','Николаевич','1882-12-29');
+INSERT INTO author (asurname,aname)
+VALUES ('Хоссейни','Халед');
+INSERT INTO author (asurname,aname)
+VALUES ('Дюкан','Пьер');
+INSERT INTO book(author_id,name,year)
+VALUES (1,'Война и мир',1870);
+INSERT INTO book (author_id,name,year)
+VALUES (1,'Детство',1852);
+INSERT INTO book (author_id,name)
+VALUES (2,'Горе от ума');
+INSERT INTO book (author_id,name,year)
+VALUES (3,'Капитанская дочка',1836);
+INSERT INTO book (author_id,name,year)
+VALUES (3,'Медный всадник',1833);
+INSERT INTO book (author_id,name,year)
+VALUES (3,'Руслан и Людмила',1820);
+INSERT INTO book (author_id,name,year)
+VALUES (4,'Герой нашего времени',1838);
+INSERT INTO book (author_id,name,year)
+VALUES (4,'Бородино',1837);
+INSERT INTO book (author_id,name)
+VALUES (5,'Смятение');
+INSERT INTO book (author_id,name,year)
+VALUES (6,'Продавец обуви',2017);
+INSERT INTO book (author_id,name,year)
+VALUES (7,'Чиполлино',1951);
+INSERT INTO book (author_id,name,year)
+VALUES (8,'Буратино',1936);
+INSERT INTO book (author_id,name,year)
+VALUES (9,'Бегущий за ветром',2003);
+INSERT INTO book (author_id,name,year)
+VALUES (10,'Диета Дюкана',2000);
+INSERT INTO publish (pub_name,pub_city)
+VALUES ('Дрофа','Казань');
+INSERT INTO publish (pub_name,pub_city)
+VALUES ('Книжник','Москва');
+INSERT INTO publish (pub_name,pub_city)
+VALUES ('Тритон','Санкт-Петербург');
+INSERT INTO publish (pub_name,pub_city)
+VALUES ('МИФ','Екатеринбург');
+INSERT INTO publish (pub_name,pub_city)
+VALUES ('АСТ','Москва');
+INSERT INTO publish (pub_name)
+VALUES ('Росмэн');
+INSERT INTO publish (pub_name,pub_city)
+VALUES ('ЭксМо','Москва');
+INSERT INTO publish (pub_name)
+VALUES ('Юнгерсон');
+INSERT INTO publish (pub_name)
+VALUES ('РИПОЛ классик');
+INSERT INTO publish (pub_name)
+VALUES ('Экзамен');
+INSERT INTO buyers (buyer_name,buyer_city)
+VALUES ('Дом книги','Казань');
+INSERT INTO buyers (buyer_name,buyer_city)
+VALUES ('Книжный','Москва');
+INSERT INTO buyers (buyer_name,buyer_city)
+VALUES ('Любимый книжный','Сочи');
+INSERT INTO buyers (buyer_name,buyer_city)
+VALUES ('Книжный червь','Пермь');
+INSERT INTO buyers (buyer_name,buyer_city)
+VALUES ('Все о книгах','Киров');
+INSERT INTO buyers (buyer_name)
+VALUES ('1000 книг');
+INSERT INTO buyers (buyer_name)
+VALUES ('ЛитРес');
+INSERT INTO buyers (buyer_name)
+VALUES ('ЛивЛиб');
+INSERT INTO buyers (buyer_name)
+VALUES ('Альдебаран');
+INSERT INTO buyers (buyer_name)
+VALUES ('Озон');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (1,'2019-01-01');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (1,'2019-02-05');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (2,'2019-05-08');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (3,'2019-06-08');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (3,'2019-10-26');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (4,'2019-07-20');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (4,'2018-11-14');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (5,'2017-11-16');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (6,'2018-04-15');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (6,'2018-09-29');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (7,'2019-06-19');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (7,'2013-10-10');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (8,'2015-02-05');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (9,'2016-12-12');
+INSERT INTO purchase(buyer_id,pur_date)
+VALUES (10,'1999-11-14');
+INSERT INTO purch_book (pur_id,pub_id,book_id,price)
+VALUES (1,1,1,200.5);
+INSERT INTO purch_book (pur_id,pub_id,book_id,count,price)
+VALUES (1,2,2,3,12.4);
+INSERT INTO purch_book (pur_id,pub_id,book_id,price)
+VALUES (2,5,3,10.0);
+INSERT INTO purch_book (pur_id,pub_id,book_id,count,price)
+VALUES (3,3,4,7,400.2);
+INSERT INTO purch_book (pur_id,pub_id,book_id,count,price)
+VALUES (3,4,5,2,150.0);
+INSERT INTO purch_book (pur_id,pub_id,book_id,price)
+VALUES (4,6,5,130.9);
+INSERT INTO purch_book (pur_id,pub_id,book_id,count,price)
+VALUES (4,7,3,20,174.5);
+INSERT INTO purch_book (pur_id,pub_id,book_id,price)
+VALUES (5,9,2,160.32);
+INSERT INTO purch_book (pur_id,pub_id,book_id,count,price)
+VALUES (6,10,8,10,120.1);
+INSERT INTO purch_book (pur_id,pub_id,book_id,price)
+VALUES (6,8,9,800.2);
+INSERT INTO purch_book (pur_id,pub_id,book_id,count,price)
+VALUES (7,2,10,11,400.75);
+INSERT INTO purch_book (pur_id,pub_id,book_id,price)
+VALUES (7,1,6,300.0);
+INSERT INTO purch_book (pur_id,pub_id,book_id,count,price)
+VALUES (8,4,7,2,240.0);
+INSERT INTO purch_book (pur_id,pub_id,book_id,count,price)
+VALUES (9,6,4,4,230.0);
+INSERT INTO purch_book (pur_id,pub_id,book_id,price)
+VALUES (10,4,7,200.0);
+ALTER TABLE book ADD COLUMN genre text;
+update book set genre='Исторические приключения' where book_id=1;
+update book set genre='Повесть' where book_id in (2,10);
+update book set genre='Драма' where book_id in (3,13,14,18);
+update book set genre='Роман' where book_id in (4,7,15,16,17);
+update book set genre='Поэма' where book_id in (5,6,8,9);
+update book set genre='Сказка' where book_id in (11,12);
