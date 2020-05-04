@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище fixikiModel" Provider="Npgsql" ProviderManifestToken="11.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6005: Тип данных "money" в настоящее время не поддерживается для целевой версии платформы Entity Framework; столбец "price" в таблице "fixiki.public.add_work" был исключен.-->
+        <EntityType Name="add_work">
+          <Key>
+            <PropertyRef Name="work_id" />
+          </Key>
+          <Property Name="work_id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="fact_work">
+          <Key>
+            <PropertyRef Name="work_id" />
+            <PropertyRef Name="worker_id" />
+            <PropertyRef Name="place_id" />
+          </Key>
+          <Property Name="work_id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="worker_id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="place_id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="start_date" Type="date" Nullable="false" />
+          <Property Name="end_date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="place">
+          <Key>
+            <PropertyRef Name="place_id" />
+          </Key>
+          <Property Name="place_id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="address" Type="text" />
+        </EntityType>
+        <EntityType Name="worker">
+          <Key>
+            <PropertyRef Name="worker_id" />
+          </Key>
+          <Property Name="worker_id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="surname" Type="text" Nullable="false" />
+          <Property Name="name" Type="text" Nullable="false" />
+          <Property Name="lastname" Type="text" />
+          <Property Name="birthday" Type="date" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6005: Тип данных "money" в настоящее время не поддерживается для целевой версии платформы Entity Framework; столбец "sum" в таблице "fixiki.public.v_payroll" был исключен.
+предупреждение 6013: Первичный ключ в таблице или представлении "fixiki.public.v_payroll" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="v_payroll">
+          <Property Name="surname" Type="text" />
+          <Property Name="name" Type="text" />
+          <Property Name="lastname" Type="text" />
+          <Property Name="birthday" Type="date" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "fixiki.public.v_place_work" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="v_place_work">
+          <Property Name="place_add" Type="text" />
+          <Property Name="name_work" Type="text" />
+          <Property Name="first_date" Type="date" />
+          <Property Name="second_date" Type="date" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6005: Тип данных "money" в настоящее время не поддерживается для целевой версии платформы Entity Framework; столбец "price" в таблице "fixiki.public.v_worker_work" был исключен.
+предупреждение 6013: Первичный ключ в таблице или представлении "fixiki.public.v_worker_work" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="v_worker_work">
+          <Property Name="surname" Type="text" />
+          <Property Name="name" Type="text" />
+          <Property Name="lastname" Type="text" />
+          <Property Name="w_name" Type="text" />
+          <Property Name="start_date" Type="date" />
+          <Property Name="end_date" Type="date" />
+        </EntityType>-->
+        <Association Name="fact_work_place_id_fkey">
+          <End Role="place" Type="Self.place" Multiplicity="1" />
+          <End Role="fact_work" Type="Self.fact_work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="place">
+              <PropertyRef Name="place_id" />
+            </Principal>
+            <Dependent Role="fact_work">
+              <PropertyRef Name="place_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fact_work_work_id_fkey">
+          <End Role="add_work" Type="Self.add_work" Multiplicity="1" />
+          <End Role="fact_work" Type="Self.fact_work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="add_work">
+              <PropertyRef Name="work_id" />
+            </Principal>
+            <Dependent Role="fact_work">
+              <PropertyRef Name="work_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fact_work_worker_id_fkey">
+          <End Role="worker" Type="Self.worker" Multiplicity="1" />
+          <End Role="fact_work" Type="Self.fact_work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="worker">
+              <PropertyRef Name="worker_id" />
+            </Principal>
+            <Dependent Role="fact_work">
+              <PropertyRef Name="worker_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище fixikiModelContainer">
+          <EntitySet Name="add_work" EntityType="Self.add_work" Schema="public" store:Type="Tables" />
+          <EntitySet Name="fact_work" EntityType="Self.fact_work" Schema="public" store:Type="Tables" />
+          <EntitySet Name="place" EntityType="Self.place" Schema="public" store:Type="Tables" />
+          <EntitySet Name="worker" EntityType="Self.worker" Schema="public" store:Type="Tables" />
+          <AssociationSet Name="fact_work_place_id_fkey" Association="Self.fact_work_place_id_fkey">
+            <End Role="place" EntitySet="place" />
+            <End Role="fact_work" EntitySet="fact_work" />
+          </AssociationSet>
+          <AssociationSet Name="fact_work_work_id_fkey" Association="Self.fact_work_work_id_fkey">
+            <End Role="add_work" EntitySet="add_work" />
+            <End Role="fact_work" EntitySet="fact_work" />
+          </AssociationSet>
+          <AssociationSet Name="fact_work_worker_id_fkey" Association="Self.fact_work_worker_id_fkey">
+            <End Role="worker" EntitySet="worker" />
+            <End Role="fact_work" EntitySet="fact_work" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="fixikiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="add_work">
+          <Key>
+            <PropertyRef Name="work_id" />
+          </Key>
+          <Property Name="work_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="fact_work" Relationship="Self.fact_work_work_id_fkey" FromRole="add_work" ToRole="fact_work" />
+        </EntityType>
+        <EntityType Name="fact_work">
+          <Key>
+            <PropertyRef Name="work_id" />
+            <PropertyRef Name="worker_id" />
+            <PropertyRef Name="place_id" />
+          </Key>
+          <Property Name="work_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="worker_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="place_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="start_date" Type="DateTime" Precision="0" Nullable="false" />
+          <Property Name="end_date" Type="DateTime" Precision="0" Nullable="false" />
+          <NavigationProperty Name="add_work" Relationship="Self.fact_work_work_id_fkey" FromRole="fact_work" ToRole="add_work" />
+          <NavigationProperty Name="place" Relationship="Self.fact_work_place_id_fkey" FromRole="fact_work" ToRole="place" />
+          <NavigationProperty Name="worker" Relationship="Self.fact_work_worker_id_fkey" FromRole="fact_work" ToRole="worker" />
+        </EntityType>
+        <EntityType Name="place">
+          <Key>
+            <PropertyRef Name="place_id" />
+          </Key>
+          <Property Name="place_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="fact_work" Relationship="Self.fact_work_place_id_fkey" FromRole="place" ToRole="fact_work" />
+        </EntityType>
+        <EntityType Name="worker">
+          <Key>
+            <PropertyRef Name="worker_id" />
+          </Key>
+          <Property Name="worker_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="birthday" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="fact_work" Relationship="Self.fact_work_worker_id_fkey" FromRole="worker" ToRole="fact_work" />
+        </EntityType>
+        <Association Name="fact_work_work_id_fkey">
+          <End Role="add_work" Type="Self.add_work" Multiplicity="1" />
+          <End Role="fact_work" Type="Self.fact_work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="add_work">
+              <PropertyRef Name="work_id" />
+            </Principal>
+            <Dependent Role="fact_work">
+              <PropertyRef Name="work_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fact_work_place_id_fkey">
+          <End Role="place" Type="Self.place" Multiplicity="1" />
+          <End Role="fact_work" Type="Self.fact_work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="place">
+              <PropertyRef Name="place_id" />
+            </Principal>
+            <Dependent Role="fact_work">
+              <PropertyRef Name="place_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fact_work_worker_id_fkey">
+          <End Role="worker" Type="Self.worker" Multiplicity="1" />
+          <End Role="fact_work" Type="Self.fact_work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="worker">
+              <PropertyRef Name="worker_id" />
+            </Principal>
+            <Dependent Role="fact_work">
+              <PropertyRef Name="worker_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="fixikiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="add_work" EntityType="Self.add_work" />
+          <EntitySet Name="fact_work" EntityType="Self.fact_work" />
+          <EntitySet Name="places" EntityType="Self.place" />
+          <EntitySet Name="workers" EntityType="Self.worker" />
+          <AssociationSet Name="fact_work_work_id_fkey" Association="Self.fact_work_work_id_fkey">
+            <End Role="add_work" EntitySet="add_work" />
+            <End Role="fact_work" EntitySet="fact_work" />
+          </AssociationSet>
+          <AssociationSet Name="fact_work_place_id_fkey" Association="Self.fact_work_place_id_fkey">
+            <End Role="place" EntitySet="places" />
+            <End Role="fact_work" EntitySet="fact_work" />
+          </AssociationSet>
+          <AssociationSet Name="fact_work_worker_id_fkey" Association="Self.fact_work_worker_id_fkey">
+            <End Role="worker" EntitySet="workers" />
+            <End Role="fact_work" EntitySet="fact_work" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище fixikiModelContainer" CdmEntityContainer="fixikiEntities">
+          <EntitySetMapping Name="add_work">
+            <EntityTypeMapping TypeName="fixikiModel.add_work">
+              <MappingFragment StoreEntitySet="add_work">
+                <ScalarProperty Name="work_id" ColumnName="work_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fact_work">
+            <EntityTypeMapping TypeName="fixikiModel.fact_work">
+              <MappingFragment StoreEntitySet="fact_work">
+                <ScalarProperty Name="work_id" ColumnName="work_id" />
+                <ScalarProperty Name="worker_id" ColumnName="worker_id" />
+                <ScalarProperty Name="place_id" ColumnName="place_id" />
+                <ScalarProperty Name="start_date" ColumnName="start_date" />
+                <ScalarProperty Name="end_date" ColumnName="end_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="places">
+            <EntityTypeMapping TypeName="fixikiModel.place">
+              <MappingFragment StoreEntitySet="place">
+                <ScalarProperty Name="place_id" ColumnName="place_id" />
+                <ScalarProperty Name="address" ColumnName="address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="workers">
+            <EntityTypeMapping TypeName="fixikiModel.worker">
+              <MappingFragment StoreEntitySet="worker">
+                <ScalarProperty Name="worker_id" ColumnName="worker_id" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="birthday" ColumnName="birthday" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
