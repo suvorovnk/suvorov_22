@@ -1,0 +1,81 @@
+CREATE TABLE Employer(emp_id serial Primary key,surname text not null,name text not null,patronymic text,login text not null,password text not null,role text not null);
+INSERT INTO employer (surname,name,patronymic,login,password,role)
+VALUES ('Тихонов','Илья','Андреевич','ticketer1','1234','кассир');
+INSERT INTO employer (surname,name,patronymic,login,password,role)
+VALUES ('Андреева','Екатерина','Юрьевна','ticketer2','5678','кассир');
+INSERT INTO employer (surname,name,patronymic,login,password,role)
+VALUES ('Хуснутдинов','Азат','Гафурович','ticketer3','9012','кассир');
+INSERT INTO employer (surname,name,patronymic,login,password,role)
+VALUES ('Амирьянова','Ангелина','Ахметбековна','ticketer4','3456','кассир');
+INSERT INTO employer (surname,name,patronymic,login,password,role)
+VALUES ('Петров','Андрей','Владимирович','ticketer5','7890','кассир');
+INSERT INTO employer (surname,name,patronymic,login,password,role)
+VALUES ('Смирнов','Максим','Леонидович','ticketer6','1111','кассир');
+INSERT INTO employer (surname,name,patronymic,login,password,role)
+VALUES ('Валеев','Дмитрий','Анатольевич','ticketer7','2222','кассир');
+INSERT INTO employer (surname,name,patronymic,login,password,role)
+VALUES ('Пудин','Валерий','Валерьевич','ticketer8','2024','кассир');
+INSERT INTO employer (surname,name,patronymic,login,password,role)
+VALUES ('Суворов','Никита','Константинович','operator1','suvorovnk','оператор базы данных');
+INSERT INTO employer (surname,name,patronymic,login,password,role)
+VALUES ('Червоненко','Александр','Михайлович','operator2','alexche','оператор базы данных');
+INSERT INTO employer (surname,name,patronymic,login,password,role)
+VALUES ('Сайпеева','Гульназ','Рамилевна','admin','gulnazka2909','администратор');
+CREATE TABLE team(team_id serial Primary key,name text not null,city text not null);
+INSERT INTO team (name,city)
+VALUES ('Рубин','Казань');
+INSERT INTO team (name,city)
+VALUES ('ЦСКА','Москва');
+INSERT INTO team (name,city)
+VALUES ('Спартак','Москва');
+INSERT INTO team (name,city)
+VALUES ('Локомотив','Москва');
+INSERT INTO team (name,city)
+VALUES ('Зенит','Санкт-Петербург');
+INSERT INTO team (name,city)
+VALUES ('Краснодар','Краснодар');
+INSERT INTO team (name,city)
+VALUES ('Крылья Советов','Самара');
+INSERT INTO team (name,city)
+VALUES ('Уфа','Уфа');
+INSERT INTO team (name,city)
+VALUES ('Ростов','Ростов-на-Дону');
+INSERT INTO team (name,city)
+VALUES ('Сочи','Сочи');
+INSERT INTO team (name,city)
+VALUES ('Урал','Екатеринбург');
+INSERT INTO team (name,city)
+VALUES ('Тамбов','Тамбов');
+INSERT INTO team (name,city)
+VALUES ('Оренбург','Оренбург');
+INSERT INTO team (name,city)
+VALUES ('Динамо','Москва');
+INSERT INTO team (name,city)
+VALUES ('Ахмат','Грозный');
+INSERT INTO team (name,city)
+VALUES ('Арсенал','Тула');
+CREATE TABLE Match(match_id serial Primary key,team_id int not null,type text not null,date_match timestamp without time zone not null);
+Alter TABLE Match add
+Foreign key (team_id)
+References team(team_id);
+create table Place(place_id serial Primary key,match_id int,sector int not null,row int not null,num_place int not null,type text not null,season_ticket bool default false,price real check (price>49.99));
+create table ticket(ticket_id serial Primary Key,place_id int,emp_id int);
+Alter TABLE place add
+Foreign key (match_id)
+References match(match_id);
+Alter TABLE Ticket add
+Foreign key (place_id)
+References place(place_id);
+Alter TABLE Ticket add
+Foreign key (emp_id)
+References employer(emp_id);
+insert into match (team_id,type,date_match)
+values (2,'РПЛ','2020-05-26 14:00:00');
+insert into match (team_id,type,date_match)
+values (3,'РПЛ','2020-05-31 18:00:00');
+insert into match (team_id,type,date_match)
+values (4,'РПЛ','2020-06-09 21:00:00');
+insert into match (team_id,type,date_match)
+values (5,'РПЛ','2020-06-16 16:30:00');
+insert into match (team_id,type,date_match)
+values (9,'РПЛ','2020-06-30 20:00:00');
