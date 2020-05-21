@@ -1,0 +1,3 @@
+create database mail_text;
+create table mails (mail_id serial Primary key,address text not null,name text not null,message text);
+insert into mails(address,name,message) values ('abcd@yandex.ru','Сергеев Сергей Сергеевич','С днем рождения!');
