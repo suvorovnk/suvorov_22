@@ -40,9 +40,12 @@ namespace Football_Ticket
         private void button5_Click(object sender, EventArgs e)
         {
             Options op = new Options();
-            op.ChooseTeam(dataGridView1);
-            EditT et = new EditT();
-            et.Show();
+            if (dataGridView1.SelectedCells.Count == 1)
+            {
+                EditT et = new EditT(op.ChooseTeam(dataGridView1)[0], op.ChooseTeam(dataGridView1)[1]);
+                et.Show();
+            }
+            else MessageBox.Show("Выберите один столбец строки, которую хотите редактировать");
         }
 
         private void ShowTeams_FormClosed(object sender, FormClosedEventArgs e)

@@ -32,19 +32,19 @@ namespace Football_Ticket
             string role=op.CheckUser(textBox1.Text,textBox2.Text);
             if (role=="кассир")
             {
-                this.Close();
+                this.Hide();
                 Ticketer t = new Ticketer();
                 t.Show();
             }
             else if (role=="оператор базы данных")
             {
-                this.Close();
+                this.Hide();
                 DBOperator dbop = new DBOperator();
                 dbop.Show();
             }
             else if (role=="администратор")
             {
-                this.Close();
+                this.Hide();
 ;               Admin a = new Admin();
                 a.Show();
             }
@@ -59,6 +59,10 @@ namespace Football_Ticket
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Authorizecs_FormClosed(object sender, FormClosedEventArgs e)
+        {
             Form1 f = new Form1();
             f.Show();
         }

@@ -27,22 +27,31 @@ namespace Football_Ticket
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
-            Authorizecs a = new Authorizecs();
-            a.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             ShowMatches sm = new ShowMatches();
             sm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             ShowTeams s = new ShowTeams();
             s.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void DBOperator_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Authorizecs a = new Authorizecs();
+            a.Show();
         }
     }
 }

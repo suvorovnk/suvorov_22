@@ -10,22 +10,11 @@ using System.Windows.Forms;
 
 namespace Football_Ticket
 {
-    public partial class EditT : Form
+    public partial class AddW : Form
     {
-        public EditT(string name,string city)
+        public AddW()
         {
             InitializeComponent();
-            this.n = name;
-            this.c = city;
-        }
-        public string n;
-        public string c;
-
-        private void EditT_Load(object sender, EventArgs e)
-        {
-            Options op = new Options();
-            textBox1.Text = n;
-            textBox2.Text = c;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -36,7 +25,7 @@ namespace Football_Ticket
         private void button1_Click(object sender, EventArgs e)
         {
             Options op = new Options();
-            op.EditTeam(textBox1.Text, textBox2.Text);
+            op.AddWorker(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, comboBox1.SelectedItem.ToString());
             this.Close();
         }
     }

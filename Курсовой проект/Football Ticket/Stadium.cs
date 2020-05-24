@@ -12,254 +12,290 @@ namespace Football_Ticket
 {
     public partial class Stadium : Form
     {
-        public Stadium()
+        public Stadium(int kom)
         {
             InitializeComponent();
+            this.kod_m = kom;
+            
         }
         public int ChSector;
+        public int kod_m;
+        
         private void button23_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 4;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 1;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+           
             ChSector = 2;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 3;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button24_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
             ChSector = 5;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button25_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
             ChSector = 6;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button26_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
             ChSector = 7;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button27_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
             ChSector = 8;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button28_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
             ChSector = 9;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button29_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
             ChSector = 10;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button30_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
             ChSector = 11;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button31_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
             ChSector = 12;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button32_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
             ChSector = 13;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button33_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 14;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button34_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+           
             ChSector = 15;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button35_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 16;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 17;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 18;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 19;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 20;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+           
             ChSector = 21;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 22;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+           
             ChSector = 23;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+           
             ChSector = 24;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 25;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 26;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+           
             ChSector = 27;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 28;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 29;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 30;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 31;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+           
             ChSector = 32;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 33;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 34;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
-            Mesta ms = new Mesta();
+            
             ChSector = 35;
+            Mesta ms = new Mesta(kod_m, ChSector);
             ms.Show();
+        }
+
+        private void Stadium_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1 f = new Form1();
+            f.Show();
         }
     }
 }

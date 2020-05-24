@@ -10,22 +10,24 @@ using System.Windows.Forms;
 
 namespace Football_Ticket
 {
-    public partial class EditT : Form
+    public partial class DeleteWorker : Form
     {
-        public EditT(string name,string city)
+        public DeleteWorker(string s,string n,string p,string r)
         {
             InitializeComponent();
-            this.n = name;
-            this.c = city;
+            this.s = s;
+            this.n = n;
+            this.p = p;
+            this.r = r;
         }
+        public string s;
         public string n;
-        public string c;
+        public string p;
+        public string r;
 
-        private void EditT_Load(object sender, EventArgs e)
+        private void DeleteWorker_Load(object sender, EventArgs e)
         {
-            Options op = new Options();
-            textBox1.Text = n;
-            textBox2.Text = c;
+            label1.Text += s + " " + n + " " + p + " с должностью " + r+"?";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace Football_Ticket
         private void button1_Click(object sender, EventArgs e)
         {
             Options op = new Options();
-            op.EditTeam(textBox1.Text, textBox2.Text);
+            op.DeleteW();
             this.Close();
         }
     }

@@ -76,10 +76,10 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(273, 133);
+            this.textBox1.Location = new System.Drawing.Point(243, 133);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 36);
+            this.textBox1.Size = new System.Drawing.Size(196, 36);
             this.textBox1.TabIndex = 3;
             // 
             // button1
@@ -113,11 +113,11 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(273, 212);
+            this.textBox2.Location = new System.Drawing.Point(243, 212);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(166, 36);
+            this.textBox2.Size = new System.Drawing.Size(196, 36);
             this.textBox2.TabIndex = 7;
             // 
             // checkBox1
@@ -152,6 +152,7 @@
             this.Name = "Authorizecs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Authorizecs_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

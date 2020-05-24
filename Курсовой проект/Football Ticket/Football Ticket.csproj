@@ -163,6 +163,12 @@
     <Compile Include="AddT.Designer.cs">
       <DependentUpon>AddT.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddW.Designer.cs">
+      <DependentUpon>AddW.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,11 +181,29 @@
     <Compile Include="Authorizecs.Designer.cs">
       <DependentUpon>Authorizecs.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChooseD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseD.Designer.cs">
+      <DependentUpon>ChooseD.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBOperator.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DBOperator.Designer.cs">
       <DependentUpon>DBOperator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteWorker.Designer.cs">
+      <DependentUpon>DeleteWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditM.Designer.cs">
+      <DependentUpon>EditM.cs</DependentUpon>
     </Compile>
     <Compile Include="EditT.cs">
       <SubType>Form</SubType>
@@ -187,8 +211,20 @@
     <Compile Include="EditT.Designer.cs">
       <DependentUpon>EditT.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditW.Designer.cs">
+      <DependentUpon>EditW.cs</DependentUpon>
+    </Compile>
     <Compile Include="employer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employers.Designer.cs">
+      <DependentUpon>Employers.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -262,17 +298,35 @@
     <EmbeddedResource Include="AddT.resx">
       <DependentUpon>AddT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddW.resx">
+      <DependentUpon>AddW.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Authorizecs.resx">
       <DependentUpon>Authorizecs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChooseD.resx">
+      <DependentUpon>ChooseD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DBOperator.resx">
       <DependentUpon>DBOperator.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeleteWorker.resx">
+      <DependentUpon>DeleteWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditM.resx">
+      <DependentUpon>EditM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditT.resx">
       <DependentUpon>EditT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditW.resx">
+      <DependentUpon>EditW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employers.resx">
+      <DependentUpon>Employers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

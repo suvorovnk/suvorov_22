@@ -35,6 +35,25 @@ namespace Football_Ticket
         {
             Options op = new Options();
             op.ShowMatches(dataGridView1);
+            if (dataGridView1.RowCount == 0) label1.Visible = true;
+            else label1.Visible = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Options op = new Options();
+            if (dataGridView1.SelectedCells.Count == 1)
+            {
+                EditM em = new EditM(int.Parse(op.ChooseMatch(dataGridView1)[0]), op.ChooseMatch(dataGridView1)[1], DateTime.Parse(op.ChooseMatch(dataGridView1)[2]));
+                em.Show();
+            }
+            else MessageBox.Show("Выберите один столбец строки, которую хотите редактировать");
+        }
+
+        private void ShowMatches_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DBOperator d = new DBOperator();
+            d.Show();
         }
     }
 }
