@@ -1,0 +1,18 @@
+.image {
+  position: relative;
+  width: 100%; /* для IE 6 */
+}
+h2 {
+  position: absolute;
+  top: 250px;
+  left: 0;
+  width: 100%;
+}
+h2 span {
+  color: #fff;
+  font-size: 30px;
+  line-height: 55px;
+  background: rgba(0, 0, 0, 0.7);
+  background: #000;
+  padding: 10px;
+}
