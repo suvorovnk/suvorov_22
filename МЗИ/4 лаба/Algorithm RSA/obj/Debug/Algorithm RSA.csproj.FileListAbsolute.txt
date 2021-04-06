@@ -1,0 +1,77 @@
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\Algorithm RSA.exe.config
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\Algorithm RSA.exe
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\Algorithm RSA.pdb
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm_RSA.Form1.resources
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm_RSA.Properties.Resources.resources
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.csproj.GenerateResource.cache
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.exe
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.pdb
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\Algorithm RSA.exe.config
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\Algorithm RSA.exe
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\Algorithm RSA.pdb
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.csprojAssemblyReference.cache
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm_RSA.Form1.resources
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm_RSA.Properties.Resources.resources
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.csproj.GenerateResource.cache
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.exe
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.pdb
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\ZedGraph.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\ZedGraph.xml
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Student\Desktop\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.csproj.CopyComplete
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\ZedGraph.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\ZedGraph.xml
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.csproj.CopyComplete
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\Algorithm RSA.exe.config
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\Algorithm RSA.exe
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\Algorithm RSA.pdb
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\ZedGraph.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\ZedGraph.xml
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm_RSA.Form1.resources
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm_RSA.Properties.Resources.resources
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.csproj.GenerateResource.cache
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.csproj.CopyComplete
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.exe
+C:\Users\user\Desktop\Лабораторные по информатике\4 курс. Финал\Методы защиты информации ч.2\Algorithm RSA\Algorithm RSA\obj\Debug\Algorithm RSA.pdb
