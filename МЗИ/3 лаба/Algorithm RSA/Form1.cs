@@ -21,7 +21,9 @@ namespace Algorithm_RSA
         {
             InitializeComponent();
         }
-        
+        public static List<BigInteger> p_values=new List<BigInteger>();//коллекция для хранения значений p
+        public static List<BigInteger> q_values = new List<BigInteger>();//коллекция для хранения значений q
+        public static List<double> times = new List<double>();//коллекция для хранения показателей времени работы алгоритма
         public static bool MillerRabin(BigInteger value, int k)//тест Миллера-Рабина на простоту
         {
             if (value == 2 || value == 3)//если число 2 или 3, то простое
@@ -114,14 +116,7 @@ namespace Algorithm_RSA
                 BigInteger q = BigInteger.Parse(textBox2.Text);
                 if ((MillerRabin(p, 10) == true) && (MillerRabin(q, 10) == true))
                 {
-                    textBox1.ReadOnly = true;
-                    textBox2.ReadOnly = true;
-                    textBox3.ReadOnly = true;
-                    max_pq.ReadOnly = true;
-                    groupBox1.Enabled = false;
-                    groupBox2.Enabled = false;
-                    string text = TextProcessing(textBox3.Text);
-                    textBox3.Text = text;
+                    string text = textBox3.Text;
                     char[] MyChar = { ',', ' ', '/', '?', '!', '.', ':', ';', '@', '#', '№', '$', '%', '^', '*', '(', ')', '-', '_', '=', '+' };
                     string[] text2 = text.Split(MyChar);
                     string text3 = "";
@@ -153,10 +148,10 @@ namespace Algorithm_RSA
                         }
                         else output_text += t3;
                     }
+                    
                     textBox4.Text = d.ToString();
                     textBox5.Text = n.ToString();
                     textBox6.Text = output_text;
-                    textBox10.Text = E.ToString();
                 }
                 else MessageBox.Show("Числа не простые! Введите простые числа!");
             }
@@ -164,70 +159,90 @@ namespace Algorithm_RSA
         }
         private void button2_Click(object sender, EventArgs e)//расшифровка текста
         {
-            
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
             if ((textBox4.Text != "") && (textBox5.Text != "") && (textBox6.Text != ""))
             {
                 textBox7.Text = "";
-                if (radioButton6.Checked)
+                BigInteger n = BigInteger.Parse(textBox5.Text);
+                string[] text = textBox6.Text.Split(' ');
+                string result = "";
+                BigInteger x = (BigInteger)Math.Sqrt((double)n);
+                int k = 1;
+                bool stop = false;
+                BigInteger y,y_2;
+                do
                 {
-                    BigInteger n = BigInteger.Parse(textBox5.Text);
-                    string[] text = textBox6.Text.Split(' ');
-                    string result = "";
-                    BigInteger x = (BigInteger)Math.Sqrt((double)n);
-                    int k = 1;
-                    bool stop = false;
-                    BigInteger y, y_2;
-                    do
+                    x = (BigInteger)Math.Sqrt((double)n);
+                    x += k;
+                    y_2 = (BigInteger)Math.Pow((double)x, 2) - n;
+                    for (BigInteger i = 1; i <= (BigInteger)Math.Sqrt((double)y_2) + 1; i++)
                     {
-                        x = (BigInteger)Math.Sqrt((double)n);
-                        x += k;
-                        y_2 = (BigInteger)Math.Pow((double)x, 2) - n;
-                        for (BigInteger i = 1; i <= (BigInteger)Math.Sqrt((double)y_2) + 1; i++)
+                        if (y_2 == (BigInteger)Math.Pow((double)i, 2))
                         {
-                            if (y_2 == (BigInteger)Math.Pow((double)i, 2))
-                            {
-                                stop = true;
-                                break;
-                            }
+                            stop = true;
+                            break;
                         }
-                        if (stop == false) k++;
                     }
-                    while (stop == false);
-                    y = (BigInteger)Math.Sqrt((double)y_2);
-                    BigInteger p = x - y;
-                    BigInteger q = x + y;
-                    BigInteger m = (p - 1) * (q - 1);
-                    BigInteger E = FindE(m);
-                    BigInteger d = FindD(E, m);
-                    foreach (string word in text)
-                    {
-                        BigInteger text_bi;
-                        text_bi = BigInteger.Parse(word);
-                        BigInteger t2 = text_bi;
-                        for (BigInteger i = 1; i < d; i++)
-                        {
-                            t2 = t2 * text_bi;
-                        }
-                        BigInteger t3 = t2 % n;
-                        int index = (int)t3;
-                        result += alphabet[index];
-                    }
-                    textBox7.Text += result;
-                    textBox9.Text = p.ToString();
-                    textBox8.Text = q.ToString();
-                    textBox10.Text += p.ToString() + Environment.NewLine;
-                    textBox11.Text += q.ToString() + Environment.NewLine;
+                    if (stop == false) k++;
                 }
-                if (radioButton5.Checked)
+                while (stop ==false);
+                y =(BigInteger) Math.Sqrt((double)y_2);
+                BigInteger p = x - y;
+                BigInteger q = x + y;
+                BigInteger m = (p - 1) * (q - 1);
+                BigInteger E = FindE(m);
+                BigInteger d = FindD(E, m);
+                foreach (string word in text)
                 {
-
+                    BigInteger text_bi;
+                    text_bi = BigInteger.Parse(word);
+                    BigInteger t2 = text_bi;
+                    for (BigInteger i = 1; i < d; i++)
+                    {
+                        t2 = t2 * text_bi;
+                    }
+                    BigInteger t3 = t2 % n;
+                    int index = (int)t3;
+                    result += alphabet[index];
                 }
+                
+                textBox7.Text += result;
+                textBox9.Text = p.ToString();
+                textBox8.Text = q.ToString();
+                textBox10.Text += p.ToString() + Environment.NewLine;
+                textBox11.Text += q.ToString() + Environment.NewLine;
+                stopwatch.Stop();
+                textBox12.Text +=(double)stopwatch.ElapsedMilliseconds/1000+" сек."+Environment.NewLine;
+                p_values.Add(p);
+                q_values.Add(q);
+                times.Add((double)stopwatch.ElapsedMilliseconds / 1000);
             }
             else
                 MessageBox.Show("Заполните поля с секретными ключами и исходным текстом!");
         }
         
-        
+        private void button4_Click_2(object sender,EventArgs e)//рисование графика
+        {
+            zedGraphControl1.Visible = true;
+            GraphPane graph = new GraphPane();
+            graph.Title.Text = "Зависимость времени выполнения от |p-q|";
+            graph.XAxis.Title.Text = "|p-q|";
+            graph.YAxis.Title.Text = "Время выполнения программы";
+            graph.CurveList.Clear();
+            PointPairList points = new PointPairList();
+            points.Sort();
+            for (int i = 0; i < p_values.Count; i++)
+            {
+                BigInteger mod = (BigInteger)Math.Abs((Int64)(p_values[i] - q_values[i]));
+                points.Add((double)mod, times[i]);
+            }
+            LineItem mycurve = graph.AddCurve("Зависимость времени выполнения от |p-q|", points, Color.Red, SymbolType.Circle);
+          
+            zedGraphControl1.GraphPane = graph;
+            zedGraphControl1.Invalidate();
+            zedGraphControl1.AxisChange();
+        }
         private void button3_Click(object sender, EventArgs e)//очистка всех полей и массивов
         {
             textBox1.Text = "";
@@ -242,32 +257,11 @@ namespace Algorithm_RSA
             textBox10.Text = "";
             textBox11.Text = "";
             textBox12.Text = "";
-            groupBox1.Enabled = true;
-            groupBox2.Enabled = true;
-            textBox1.ReadOnly = false;
-            textBox2.ReadOnly = false;
-            textBox3.ReadOnly = false;
-            max_pq.ReadOnly = false;
-            radioButton1.Checked = true;
-            radioButton4.Checked = true;
+            p_values.Clear();
+            q_values.Clear();
+            times.Clear();
         }
         private void Form1_Load(object sender, EventArgs e)//метод загрузки формы
-        {
-            radioButton4.Checked = true;
-            max_pq.Text = 100.ToString();
-            radioButton1.Checked = true;
-        }
-        public List<BigInteger> Generatepq(BigInteger maximum)
-        {
-            List<BigInteger> p_q_values = new List<BigInteger>();
-            for (BigInteger i=3;i<maximum;i++)
-            {
-                if (MillerRabin(i, 10) == true)
-                    p_q_values.Add(i);
-            }
-            return p_q_values;
-        }
-        public string ReadFromFile()//метод чтения из файла
         {
             string[] text = File.ReadAllLines("input.txt");
             string t = "";
@@ -283,54 +277,13 @@ namespace Algorithm_RSA
                 text3 += text2[i];
             }
             string text4 = text3.ToUpper();
-            return text4;
-        }
-        public string TextProcessing(string t)//метод обработки введенного вручную текста
-        {
-            char[] MyChar = { ',', ' ', '/', '?', '!', '.', ':', ';', '@', '#', '№', '$', '%', '^', '*', '(', ')', '-', '_', '=', '+', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-            string[] text2 = t.Split(MyChar);
-            string text3 = "";
-            for (int i = 0; i < text2.Length; i++)
-            {
-                text3 += text2[i];
-            }
-            string text4 = text3.ToUpper();
-            return text4;
-        }
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)//генерация p и q
-        {
-            List<BigInteger> p_q_values = new List<BigInteger>();
-            p_q_values = Generatepq(BigInteger.Parse(max_pq.Text));
-            max_pq.ReadOnly = true;
-            Random r = new Random();
-            BigInteger p = p_q_values[r.Next(p_q_values.Count())];
-            BigInteger q = p_q_values[r.Next(p_q_values.Count())];
-            if (p==q) q= p_q_values[Math.Abs(p_q_values.Count()-r.Next(p_q_values.Count()))];
-            textBox1.Text = p.ToString();
-            textBox2.Text = q.ToString();
-            textBox1.ReadOnly = true;
-            textBox2.ReadOnly = true;
+            textBox3.Text = text4;
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)//выбор ручного режима ввода p и q
+        private void button5_Click(object sender, EventArgs e)//очищение графика, точнее его скрытие
         {
-            max_pq.ReadOnly = false;
-            textBox1.ReadOnly = false;
-            textBox2.ReadOnly = false;
-            textBox1.Text = "";
-            textBox2.Text = "";
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)//загрузка из файла
-        {
-            textBox3.Text = ReadFromFile();
-            textBox3.ReadOnly = true;
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)//выбор ручного режима ввода текста
-        {
-            textBox3.ReadOnly = false;
-            textBox3.Text = "";
+            zedGraphControl1.Visible = false;
+            
         }
     }
 }
